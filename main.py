@@ -51,12 +51,13 @@ def scrape():
                         continue
 
                     price = ad.find("p", class_="aditem-main--middle--price")
+
+                    print("------------------------------")
                     print(f"{ad_link.get_text()}:")
                     if price != None:
                         print(price.get_text().replace(" ", ""))
                     print()
                     print("https://www.ebay-kleinanzeigen.de" + ad_link["href"])
-                    print()
                     print("------------------------------")
 
                     n = notify2.Notification("New Ebay Ad",
